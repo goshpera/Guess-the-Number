@@ -1,10 +1,6 @@
 from random import randrange
 
 
-def game(number):
-    return number
-
-
 def choose_difficulty(difficulty):
     num = 0
     difficulties = {
@@ -29,7 +25,20 @@ def choose_difficulty(difficulty):
         return
 
 
+num_of_guesses = 0
 diff = input()
-my_num = choose_difficulty(diff)
-print(my_num)
+number = choose_difficulty(diff)
+guess = int(input("Enter your guess: "))
+while number != guess:
+    if guess < number:
+        print("The number you are trying to guess is higher.")
+        guess = int(input("Try again: "))
+        num_of_guesses += 1
+    elif guess > number:
+        print("The number you are trying to guess is lower.")
+        guess = int(input("Try again: "))
+        num_of_guesses += 1
+    else:
+        break
+print(f"Guessed! {num_of_guesses} guesses")
 #print(randrange(1,10))
