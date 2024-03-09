@@ -41,4 +41,3 @@ while number != guess:
     else:
         break
 print(f"Guessed! {num_of_guesses} guesses")
-#print(randrange(1,10))
